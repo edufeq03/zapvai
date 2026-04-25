@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zapvai - Transforme seu WhatsApp em um Vendedor Automático | Soluções de IA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* Variáveis CSS para Cores Premium e Minimalistas */
+        :root {
+            --color-primary: #1a202c; /* Azul Meia-Noite Profundo */
+            --color-secondary: #00e6e6; /* Ciano Neon - Destaque */
+            --color-accent: #28a745; /* Verde - Sucesso, CTA */
+            --color-text-dark: #cbd5e0; /* Texto Cinza Claro */
+            --color-text-light: #f8f9fa; /* Texto Branco */
+            --color-background-dark: #0f172a; /* Fundo Escuro Principal */
+            --color-background-light: #1e293b; /* Fundo Secundário Escuro */
+            --color-white: #ffffff;
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+
+        /* Reset Básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--color-text-dark);
+            background-color: var(--color-background-dark);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--color-secondary);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--color-white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 25px;
+        }
+
+        /* Seções Gerais */
+        section {
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--color-text-light);
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-subtitle {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.3em;
+            color: var(--color-text-dark);
+            margin-bottom: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Efeito Glassmorphism */
+        .glass-effect {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            border-radius: 15px;
+        }
+
+        /* Botão CTA */
+        .btn-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--color-secondary);
+            color: var(--color-primary);
+            padding: 18px 35px;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(0, 230, 230, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-cta:hover {
+            background-color: var(--color-white);
+            color: var(--color-primary);
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 230, 230, 0.6);
+        }
+
+        .btn-cta i {
+            margin-right: 12px;
+            font-size: 1.4em;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--color-background-dark) 0%, #1e3a8a 100%);
+            color: var(--color-text-light);
+            padding: 120px 0;
+            display: flex;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 20% 80%, rgba(0, 230, 230, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(26, 32, 44, 0.2) 0%, transparent 50%);
+            animation: rotateBackground 20s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes rotateBackground {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-headline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4.5em;
+            font-weight: 700;
+            margin-bottom: 25px;
+            line-height: 1.1;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subheadline {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.7em;
+            font-weight: 300;
+            margin-bottom: 40px;
+            max-width: 900px;
+            color: var(--color-text-dark);
+        }
+
+        .hero-bullets {
+            list-style: none;
+            margin-bottom: 50px;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .hero-bullets li {
+            @extend .glass-effect;
+            padding: 12px 25px;
+            font-weight: 500;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--color-text-light);
+            transition: all 0.3s ease;
+        }
+
+        .hero-bullets li:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.5);
+        }
+
+        .hero-bullets li i {
+            color: var(--color-secondary);
+            font-size: 1.2em;
+        }
+
+        .hero-image {
+            margin-top: 70px;
+            max-width: 90%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            transition: transform 0.5s ease;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.01);
+        }
+
+        /* Seção de Dor */
+        .pain-section {
+            background-color: var(--color-background-light);
+            padding: 100px 0;
+        }
+
+        .pain-section .section-title {
+            color: var(--color-text-light);
+        }
+
+        .pain-text {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--color-text-dark);
+        }
+
+        .pain-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 40px;
+        }
+
+        .pain-list li {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 40px;
+            text-align: left;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--color-text-dark);
+        }
+
+        .pain-list li::before {
+            content: '\f057'; /* Ícone de X */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: #ef4444; /* Vermelho mais vibrante */
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.3em;
+        }
+
+        .pain-stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .pain-stat-card {
+            @extend .glass-effect;
+            padding: 30px;
+            flex: 1 1 280px;
+            max-width: 320px;
+            color: var(--color-text-light);
+            transition: transform 0.3s ease;
+        }
+
+        .pain-stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px 0 rgba(31, 38, 135, 0.5);
+        }
+
+        .pain-stat-card .number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3em;
+            font-weight: 700;
+            color: var(--color-secondary);
+            margin-bottom: 10px;
+        }
+
+        .pain-stat-card .label {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.1em;
+            color: var(--color-text-dark);
+        }
+
+        .pain-punchline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5em;
+            font-weight: 600;
+            color: var(--color-secondary);
+            margin-top: 60px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Seção de Solução */
+        .solution-section {
+            background-color: var(--color-background-dark);
+            padding: 100px 0;
+        }
+
+        .solution-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .solution-card {
+            @extend .glass-effect;
+            padding: 35px;
+            text-align: left;
+            color: var(--color-text-light);
+            transition: transform 0.3s ease;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.5);
+        }
+
+        .solution-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6em;
+            color: var(--color-secondary);
+            margin-bottom: 15px;
+        }
+
+        .solution-card p {
+            font-family: 'Roboto', sans-serif;
+            color: var(--color-text-dark);
+        }
+
+        .solution-highlight {
+            background: linear-gradient(90deg, var(--color-secondary) 0%, #00b3b3 100%);
+            color: var(--color-primary);
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 70px;
+            font-size: 1.4em;
+            font-weight: 600;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 8px 25px rgba(0, 230, 230, 0.3);
+        }
+
+        .solution-image {
+            margin-top: 70px;
+            max-width: 90%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            transition: transform 0.5s ease;
+        }
+
+        .solution-image:hover {
+            transform: scale(1.01);
+        }
+
+        /* Seção de Benefícios */
+        .benefits-section {
+            background-color: var(--color-background-light);
+            color: var(--color-text-light);
+            padding: 100px 0;
+        }
+
+        .benefits-section .section-title {
+            color: var(--color-text-light);
+        }
+
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .benefits-list li {
+            @extend .glass-effect;
+            padding: 25px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.15em;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            text-align: left;
+            color: var(--color-text-dark);
+            transition: all 0.3s ease;
+        }
+
+        .benefits-list li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.5);
+        }
+
+        .benefits-list li i {
+            color: var(--color-secondary);
+            font-size: 1.8em;
+        }
+
+        .benefits-impact-phrase {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2em;
+            font-weight: 700;
+            margin-top: 70px;
+            color: var(--color-secondary);
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Seção Como Funciona */
+        .how-it-works-section {
+            background-color: var(--color-background-dark);
+            padding: 100px 0;
+        }
+
+        .how-it-works-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .step-card {
+            flex: 1 1 300px;
+            max-width: 380px;
+            @extend .glass-effect;
+            padding: 40px;
+            text-align: left;
+            position: relative;
+            color: var(--color-text-light);
+            transition: transform 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px 0 rgba(31, 38, 135, 0.5);
+        }
+
+        .step-card .step-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5em;
+            font-weight: 700;
+            color: var(--color-secondary);
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            opacity: 0.15;
+        }
+
+        .step-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8em;
+            color: var(--color-white);
+            margin-bottom: 15px;
+        }
+
+        .step-card p {
+            font-family: 'Roboto', sans-serif;
+            color: var(--color-text-dark);
+        }
+
+        .how-it-works-complement {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.3em;
+            margin-top: 60px;
+            font-weight: 400;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--color-text-dark);
+        }
+
+        /* Seção de Objeções */
+        .objections-section {
+            background-color: var(--color-background-light);
+            padding: 100px 0;
+        }
+
+        .objection-item {
+            margin-bottom: 40px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+            @extend .glass-effect;
+            padding: 30px;
+            color: var(--color-text-light);
+            transition: transform 0.3s ease;
+        }
+
+        .objection-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.5);
+        }
+
+        .objection-item h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6em;
+            color: var(--color-secondary);
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 45px;
+        }
+
+        .objection-item h3::before {
+            content: '\f059'; /* Ícone de interrogação */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--color-secondary);
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.5em;
+        }
+
+        .objection-item p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.15em;
+            color: var(--color-text-dark);
+            padding-left: 45px; /* Alinhar com o texto da pergunta */
+        }
+
+        /* CTA Final */
+        .final-cta {
+            background: linear-gradient(45deg, var(--color-primary) 0%, #00e6e6 100%);
+            color: var(--color-white);
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 20% 80%, rgba(0, 230, 230, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(26, 32, 44, 0.2) 0%, transparent 50%);
+            animation: rotateBackground 20s linear infinite reverse;
+            z-index: 0;
+        }
+
+        .final-cta .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .final-cta .section-title {
+            color: var(--color-white);
+            font-size: 3.5em;
+        }
+
+        .final-cta-text {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.7em;
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--color-text-dark);
+        }
+
+        .final-cta-image {
+            margin-top: 70px;
+            max-width: 90%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            transition: transform 0.5s ease;
+        }
+
+        .final-cta-image:hover {
+            transform: scale(1.01);
+        }
+
+        /* Rodapé */
+        .footer {
+            background-color: var(--color-background-dark);
+            color: var(--color-text-dark);
+            padding: 50px 0;
+            text-align: center;
+            font-size: 0.95em;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .footer a {
+            color: var(--color-secondary);
+            font-weight: 500;
+        }
+
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2.5em;
+            }
+            .hero-headline {
+                font-size: 3.5em;
+            }
+            .hero-subheadline, .final-cta-text {
+                font-size: 1.4em;
+            }
+            .hero-bullets li {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
+            .btn-cta {
+                padding: 15px 30px;
+                font-size: 1.1em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 0;
+            }
+            header .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            header nav {
+                gap: 15px;
+                font-size: 0.9em;
+            }
+            section {
+                padding: 80px 0;
+            }
+            .section-title {
+                font-size: 2em;
+            }
+            .section-subtitle {
+                font-size: 1.1em;
+            }
+            .hero-headline {
+                font-size: 2.8em;
+            }
+            .hero-subheadline, .final-cta-text {
+                font-size: 1.2em;
+            }
+            .hero-bullets {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .hero-bullets li {
+                width: 100%;
+            }
+            .pain-stat-card {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+            .solution-features {
+                grid-template-columns: 1fr;
+            }
+            .benefits-list {
+                grid-template-columns: 1fr;
+            }
+            .benefits-impact-phrase {
+                font-size: 1.6em;
+            }
+            .how-it-works-steps {
+                flex-direction: column;
+                align-items: center;
+            }
+            .step-card {
+                max-width: 100%;
+            }
+            .objection-item h3, .objection-item p {
+                padding-left: 0;
+                text-align: center;
+            }
+            .objection-item h3::before {
+                position: static;
+                margin-right: 10px;
+            }
+            .final-cta .section-title {
+                font-size: 2.5em;
+            }
+            .final-cta-text {
+                font-size: 1.1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-headline {
+                font-size: 2.2em;
+            }
+            .hero-subheadline {
+                font-size: 1em;
+            }
+            .btn-cta {
+                padding: 12px 25px;
+                font-size: 1em;
+            }
+            .section-title {
+                font-size: 1.8em;
+            }
+            .pain-stat-card .number {
+                font-size: 2.2em;
+            }
+            .pain-punchline {
+                font-size: 1.2em;
+            }
+            .solution-highlight {
+                font-size: 1.1em;
+            }
+            .benefits-impact-phrase {
+                font-size: 1.3em;
+            }
+            .step-card h3 {
+                font-size: 1.4em;
+            }
+            .objection-item h3 {
+                font-size: 1.2em;
+            }
+            .objection-item p {
+                font-size: 1em;
+            }
+            .final-cta .section-title {
+                font-size: 2em;
+            }
+            .final-cta-text {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header/Logo -->
+    <header style="background-color: var(--color-background-dark); padding: 20px 0; border-bottom: 1px solid var(--glass-border); position: sticky; top: 0; z-index: 100;">
+        <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="font-family: 'Montserrat', sans-serif; font-size: 1.8em; font-weight: 700; color: var(--color-secondary);">
+                <i class="fas fa-bolt" style="margin-right: 8px;"></i>Zapvai
+            </div>
+            <nav style="display: flex; gap: 30px;">
+                <a href="#hero" style="color: var(--color-text-dark); transition: color 0.3s;">Início</a>
+                <a href="#benefits" style="color: var(--color-text-dark); transition: color 0.3s;">Benefícios</a>
+                <a href="#how" style="color: var(--color-text-dark); transition: color 0.3s;">Como Funciona</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <h1 class="hero-headline">
+                Transforme seu WhatsApp em um vendedor que nunca perde clientes
+            </h1>
+            <p class="hero-subheadline">
+                Responda todos os clientes em segundos, filtre curiosos e foque apenas em quem realmente está pronto para comprar.
+            </p>
+            <ul class="hero-bullets">
+                <li><i class="fas fa-clock"></i> Atendimento instantâneo 24h</li>
+                <li><i class="fas fa-robot"></i> Respostas inteligentes adaptadas ao seu negócio</li>
+                <li><i class="fas fa-filter"></i> Filtro automático de curiosos vs compradores</li>
+                <li><i class="fas fa-chart-line"></i> Mais vendas sem aumentar equipe</li>
+            </ul>
+            <a href="https://wa.me/5519996737713?text=Olá! Gostaria de transformar meu WhatsApp em um vendedor." target="_blank" class="btn-cta">
+                <i class="fab fa-whatsapp"></i> Quero transformar meu WhatsApp em um vendedor
+            </a>
+            <!-- Imagem Hero - Placeholder -->
+            <img src="https://via.placeholder.com/1000x560/1a202c/00e6e6?text=Interface+WhatsApp+Automatizada+Premium" alt="Interface de WhatsApp automatizada" class="hero-image">
+        </div>
+    </section>
+
+    <!-- Seção de Dor -->
+    <section class="pain-section">
+        <div class="container">
+            <h2 class="section-title">Você não está sem clientes. Está perdendo eles.</h2>
+            <p class="pain-text">
+                A maioria dos negócios acredita que precisa de mais clientes, mas ignora o que acontece dentro do próprio WhatsApp.
+            </p>
+            <ul class="pain-list">
+                <li>Mensagens não respondidas a tempo</li>
+                <li>Conversas que morrem no meio</li>
+                <li>Clientes que somem sem explicação</li>
+            </ul>
+            <p class="pain-text">
+                E aqui está o ponto que poucos percebem:
+            </p>
+            <p class="pain-text">
+                Grande parte das pessoas que entram em contato ainda estão avaliando.
+            </p>
+            <div class="pain-stats">
+                <div class="pain-stat-card glass-effect">
+                    <div class="number">80%</div>
+                    <div class="label">são curiosos ou estão comparando opções</div>
+                </div>
+                <div class="pain-stat-card glass-effect">
+                    <div class="number">20%</div>
+                    <div class="label">já estão prontos para comprar</div>
+                </div>
+            </div>
+            <p class="pain-text" style="margin-top: 30px;">
+                Sem um atendimento rápido e estruturado, você perde os dois.
+            </p>
+            <p class="pain-punchline">
+                O curioso não evolui. O comprador desiste. E o concorrente agradece.
+            </p>
+        </div>
+    </section>
+
+    <!-- Seção de Solução -->
+    <section class="solution-section">
+        <div class="container">
+            <h2 class="section-title">Um vendedor automático trabalhando para você 24h por dia</h2>
+            <p class="section-subtitle">
+                Nosso agente transforma seu WhatsApp em um processo de vendas inteligente:
+            </p>
+            <div class="solution-features">
+                <div class="solution-card glass-effect">
+                    <h3>Resposta Imediata</h3>
+                    <p>Responde imediatamente qualquer cliente, eliminando o tempo de espera.</p>
+                </div>
+                <div class="solution-card glass-effect">
+                    <h3>Contexto Inteligente</h3>
+                    <p>Entende o contexto da conversa e guia o cliente até a decisão de compra.</p>
+                </div>
+                <div class="solution-card glass-effect">
+                    <h3>Filtro de Qualidade</h3>
+                    <p>Filtra quem realmente vale sua atenção, focando nos compradores potenciais.</p>
+                </div>
+            </div>
+            <div class="solution-highlight">
+                Não são respostas genéricas. O conteúdo é configurado com base no seu produto, serviço e forma de vender.
+            </div>
+            <!-- Imagem Solução - Placeholder -->
+            <img src="https://via.placeholder.com/1000x560/1a202c/00e6e6?text=Fluxo+de+Vendas+Automatizado+Inteligente" alt="Fluxo de vendas automatizado" class="solution-image">
+        </div>
+    </section>
+
+    <!-- Seção de Benefícios -->
+    <section class="benefits-section" id="benefits">
+        <div class="container">
+            <h2 class="section-title">Mais vendas. Menos esforço. Zero cliente sem resposta.</h2>
+            <ul class="benefits-list">
+                <li class="glass-effect"><i class="fas fa-check-circle"></i> Nunca mais deixe um cliente esperando</li>
+                <li class="glass-effect"><i class="fas fa-chart-line"></i> Aumente sua taxa de conversão no WhatsApp</li>
+                <li class="glass-effect"><i class="fas fa-hand-pointer"></i> Foque apenas em clientes prontos para fechar</li>
+                <li class="glass-effect"><i class="fas fa-hourglass-half"></i> Reduza tempo gasto com curiosos</li>
+                <li class="glass-effect"><i class="fas fa-headset"></i> Mantenha seu atendimento ativo mesmo ocupado</li>
+            </ul>
+            <p class="benefits-impact-phrase">
+                Seu WhatsApp deixa de ser um gargalo… e vira uma máquina de vendas.
+            </p>
+        </div>
+    </section>
+
+    <!-- Seção Como Funciona -->
+    <section class="how-it-works-section" id="how">
+        <div class="container">
+            <h2 class="section-title">Simples de usar. Rápido de ativar.</h2>
+            <div class="how-it-works-steps">
+                <div class="step-card glass-effect">
+                    <span class="step-number">1</span>
+                    <h3>Conecte seu WhatsApp</h3>
+                    <p>Integre seu número de WhatsApp à nossa plataforma de forma rápida e segura.</p>
+                </div>
+                <div class="step-card glass-effect">
+                    <span class="step-number">2</span>
+                    <h3>Defina sua Estratégia</h3>
+                    <p>Configure como seu negócio responde, vende e qualifica seus clientes.</p>
+                </div>
+                <div class="step-card glass-effect">
+                    <span class="step-number">3</span>
+                    <h3>Atendimento Automático</h3>
+                    <p>Seu agente começa a atender, qualificar e preparar clientes 24h por dia.</p>
+                </div>
+            </div>
+            <p class="how-it-works-complement">
+                Em poucos minutos, seu atendimento já está ativo e funcionando.
+            </p>
+        </div>
+    </section>
+
+    <!-- Seção de Objeções -->
+    <section class="objections-section">
+        <div class="container">
+            <h2 class="section-title">Funciona mesmo no meu caso?</h2>
+            <div class="objection-item glass-effect">
+                <h3>“Vai parecer robótico?”</h3>
+                <p>Não. As respostas são naturais e adaptadas ao seu negócio, configuradas para refletir sua marca.</p>
+            </div>
+            <div class="objection-item glass-effect">
+                <h3>“E se o cliente fizer perguntas diferentes?”</h3>
+                <p>O agente interpreta e responde dentro do contexto – ou encaminha para você quando necessário, garantindo que nenhuma pergunta fique sem resposta.</p>
+            </div>
+            <div class="objection-item glass-effect">
+                <h3>“Vou perder o controle?”</h3>
+                <p>Não. Você pode assumir qualquer conversa a qualquer momento, mantendo total controle sobre o atendimento.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="final-cta">
+        <div class="container">
+            <h2 class="section-title">Quantos clientes você já perdeu hoje sem perceber?</h2>
+            <p class="final-cta-text">
+                Cada minuto sem resposta é uma oportunidade indo embora. Seu concorrente responde. Você demora.
+                Quem você acha que vende?
+            </p>
+            <a href="https://wa.me/5519996737713?text=Olá! Quero começar agora e parar de perder vendas." target="_blank" class="btn-cta">
+                <i class="fab fa-whatsapp"></i> Começar agora e parar de perder vendas
+            </a>
+            <!-- Imagem CTA Final - Placeholder -->
+            <img src="https://via.placeholder.com/1000x560/1a202c/00e6e6?text=Vendas+Concluidas+Automaticamente+Premium" alt="Relógio e vendas concluídas" class="final-cta-image">
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <div style="margin-bottom: 20px;">
+                <div style="font-family: 'Montserrat', sans-serif; font-size: 1.5em; font-weight: 700; color: var(--color-secondary); margin-bottom: 15px;">
+                    <i class="fas fa-bolt" style="margin-right: 8px;"></i>Zapvai
+                </div>
+                <p style="margin-bottom: 10px;">Transformando WhatsApp em máquinas de vendas inteligentes</p>
+            </div>
+            <p>&copy; 2026 Zapvai. Todos os direitos reservados.</p>
+            <p>Desenvolvido com <i class="fas fa-heart" style="color: #ef4444;"></i> por Manus AI</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Landing page premium carregada com sucesso!');
+            // Animações ou interatividades adicionais podem ser implementadas aqui
+            // Exemplo: Observador de Interseção para animações de scroll
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('section, .hero-image, .solution-image, .final-cta-image, .btn-cta').forEach(element => {
+                element.classList.add('fade-in-up'); // Adiciona classe para animação inicial
+                observer.observe(element);
+            });
+        });
+    </script>
+
+    <style>
+        /* Animações */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-up.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Estilos para o ícone de coração no rodapé */
+        .footer .fa-heart {
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+
+</body>
+</html>
